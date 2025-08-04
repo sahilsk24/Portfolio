@@ -1,0 +1,44 @@
+
+
+<div class="home-container">
+  <!-- 3D Starfield Background -->
+  <canvas #starfieldCanvas class="starfield-canvas" aria-hidden="true"></canvas>
+  
+  <!-- Main Content -->
+  <main class="content-wrapper" role="main">
+    <div class="text-container">
+      <!-- Animated Headline -->
+      <h1 class="headline" aria-label="I'm Sahil">
+        <span class="wave-text">
+          <span class="wave-letter" style="--delay: 0">I</span><span class="wave-letter" style="--delay: 1">'</span><span class="wave-letter" style="--delay: 2">m</span>
+          <span class="wave-letter space" style="--delay: 3"> </span>
+          <span class="wave-letter" style="--delay: 4">S</span><span class="wave-letter" style="--delay: 5">a</span><span class="wave-letter" style="--delay: 6">h</span><span class="wave-letter" style="--delay: 7">i</span><span class="wave-letter" style="--delay: 8">l</span>
+        </span>
+      </h1>
+      
+      <!-- Typing Effect Role Title -->
+      <div class="role-container">
+        <h2 class="role-title" aria-live="polite" aria-label="Current role">
+          <span class="typed-text">{{ typedText }}</span>
+        </h2>
+      </div>
+      
+      <!-- Optional Call to Action -->
+      <div class="cta-container">
+        <p class="intro-text">Welcome to my digital space</p>
+      </div>
+
+    <div class="resume-buttons">
+  <a href="/assets/resume.pdf" download class="btn download-btn" aria-label="Download Resume">Download Resume</a>
+  <a href="/assets/resume.pdf" target="_blank" rel="noopener" class="btn view-btn" aria-label="View Resume in new tab">View Resume</a>
+</div>
+
+    </div>
+  </main>
+</div>
+<app-about></app-about>
+<app-skills> </app-skills>
+<app-projects></app-projects>
+<app-certifications></app-certifications>
+<app-extra> </app-extra>
+<app-contact></app-contact>

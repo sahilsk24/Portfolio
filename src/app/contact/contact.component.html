@@ -1,0 +1,21 @@
+<section class="contact-section" id="contact">
+  <h2>Contact Me</h2>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <input type="text" name="name" [(ngModel)]="name" required placeholder="Your Name" />
+    <input type="email" name="email" [(ngModel)]="email" required placeholder="Your Email" />
+    <textarea name="message" [(ngModel)]="message" required placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="social-links">
+    <a href="https://github.com/sahilsk24" target="_blank" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/sahil-shaik-78a189263/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="mailto:sahilshaik0809@gmail.com" aria-label="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</section>

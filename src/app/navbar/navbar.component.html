@@ -1,0 +1,88 @@
+
+
+<!-- Completely new navbar structure -->
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Left side: Brand -->
+    <div class="nav-brand">
+      <a href="#" class="brand-link">Sahil's Portfolio</a>
+    </div>
+    
+    <!-- Center: Desktop menu only -->
+    <div class="desktop-nav">
+      <a [routerLink]="'/home'" class="nav-link">Home</a>
+      <a [routerLink]="'/about'" class="nav-link">About</a>
+      <a [routerLink]="'/skills'" class="nav-link">Skills</a>
+      <a [routerLink]="'/projects'" class="nav-link">Projects</a>
+      <a [routerLink]="'/certifications'" class="nav-link">Certificates</a>
+      <a [routerLink]="'/extra'" class="nav-link">Extra Curricular</a>
+      <a [routerLink]="'/contact'" class="nav-link">Contact</a>
+    </div>
+    
+    <!-- Right side: Controls with explicit mobile layout -->
+    <div class="nav-actions">
+      <!-- Theme toggle - always visible -->
+      <button 
+        class="theme-btn" 
+        (click)="toggleTheme()"
+        [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+        title="Toggle theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path *ngIf="isDarkMode" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          <circle *ngIf="!isDarkMode" cx="12" cy="12" r="5"></circle>
+          <line *ngIf="!isDarkMode" x1="12" y1="1" x2="12" y2="3"></line>
+          <line *ngIf="!isDarkMode" x1="12" y1="21" x2="12" y2="23"></line>
+          <line *ngIf="!isDarkMode" x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line *ngIf="!isDarkMode" x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line *ngIf="!isDarkMode" x1="1" y1="12" x2="3" y2="12"></line>
+          <line *ngIf="!isDarkMode" x1="21" y1="12" x2="23" y2="12"></line>
+          <line *ngIf="!isDarkMode" x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line *ngIf="!isDarkMode" x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+      
+      <!-- Mobile menu button - only visible on mobile -->
+      <button 
+        class="menu-btn" 
+        (click)="toggleMobileMenu()"
+        [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'">
+        <span class="bar" [class.active]="isMenuOpen"></span>
+        <span class="bar" [class.active]="isMenuOpen"></span>
+        <span class="bar" [class.active]="isMenuOpen"></span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile overlay menu -->
+  <div class="mobile-overlay" [class.open]="isMenuOpen" (click)="toggleMobileMenu()">
+    <div class="mobile-menu" (click)="$event.stopPropagation()">
+      <div class="mobile-menu-header">
+        <h3>Portfolio</h3>
+        <button class="close-btn" (click)="toggleMobileMenu()">×</button>
+      </div>
+      <div class="mobile-menu-links">
+        <a [routerLink]="'/home'" class="mobile-link" (click)="toggleMobileMenu()">
+          <span>🏠</span> Home
+        </a>
+        <a [routerLink]="'/about'" class="mobile-link" (click)="toggleMobileMenu()">
+          <span>👨‍💻</span> About
+        </a>
+        <a [routerLink]="'/skills'" class="mobile-link" (click)="toggleMobileMenu()">
+          <span>⚡</span> Skills
+        </a>
+        <a [routerLink]="'/projects'" class="mobile-link" (click)="toggleMobileMenu()">
+          <span>🚀</span> Projects
+        </a>
+        <a [routerLink]="'/certifications'" class="mobile-link" (click)="toggleMobileMenu()">
+          <span>🏆</span> Certificates
+        </a>
+        <a [routerLink]="'/extra'" class="mobile-link" (click)="toggleMobileMenu()">
+          <span>🎯</span> Extra Curricular
+        </a>
+        <a [routerLink]="'/contact'" class="mobile-link" (click)="toggleMobileMenu()">
+          <span>📧</span> Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

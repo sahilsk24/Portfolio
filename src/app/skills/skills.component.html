@@ -1,0 +1,35 @@
+<section class="skills-container">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3>Frontend</h3>
+      <ul>
+        <li *ngFor="let skill of frontend">{{ skill }}</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Backend</h3>
+      <ul>
+        <li *ngFor="let skill of backend">{{ skill }}</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Database</h3>
+      <ul>
+        <li *ngFor="let skill of database">{{ skill }}</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li *ngFor="let skill of tools">{{ skill }}</li>
+      </ul>
+    </div>
+    <div class="skill-category">
+      <h3>Other</h3>
+      <ul>
+        <li *ngFor="let skill of other">{{ skill }}</li>
+      </ul>
+    </div>
+  </div>
+</section>

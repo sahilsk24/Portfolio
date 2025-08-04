@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Theme Variables and Base Styles */
+
+/* Default Dark Theme */
+:root {
+  --background: #000;
+  --text-color: #fff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --accent-color: #64ffda;
+  --accent-secondary: #8fffe5;
+  --surface: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --background: #fff;
+  --text-color: #333;
+  --text-secondary: rgba(51, 51, 51, 0.7);
+  /* --accent-color: #0891b2; */
+  --accent-color: #2c6759;
+  
+  --accent-secondary: #0e604d;
+  --surface: rgba(0, 0, 0, 0.05);
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+/* Auto Theme Based on System Preference */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --background: #fff;
+    --text-color: #333;
+    --text-secondary: rgba(51, 51, 51, 0.7);
+    --accent-color: #0891b2;
+    --accent-secondary: #dc2626;
+    --surface: rgba(0, 0, 0, 0.05);
+    --border: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Base Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--background);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--accent-color);
+  color: var(--background);
+}
+
+::-moz-selection {
+  background: var(--accent-color);
+  color: var(--background);
+}
+
+/* Focus outline for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Theme toggle button styles (positioned in navbar area) */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001; /* Higher than navbar */
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  background: var(--accent-color);
+  color: var(--background);
+  box-shadow: 0 4px 20px rgba(100, 255, 218, 0.2);
+}
+
+/* Mobile responsive theme toggle */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --accent-color: #fff;
+    --text-secondary: var(--text-color);
+  }
+  
+  [data-theme="light"] {
+    --accent-color: #000;
+    --text-secondary: var(--text-color);
+  }
+}
