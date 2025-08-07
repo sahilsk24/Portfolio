@@ -15,14 +15,22 @@ export class ProjectsComponent {
         'A personalized movie recommendation system with authentication, watchlists, and reviews.',
       technologies: ['Angular','HTML', 'CSS' ],
       github: 'https://github.com/sahilsk24/FAV-MOV',
-      demo: 'https://eav-mov-demo.netlify.app',
+      demo: 'https://favmov24.netlify.app/',
     },
     {
       title: 'Tech Path Way',
       description:
         'Helps users set career goals, track progress, and explore curated resources.',
       technologies: ['Java', 'Spring Boot', 'MySQL', 'Postman'],
-      github: 'https://github.com/your-username/career-planner',
+      github: '',
+      demo: '',
+    },
+    {
+      title: 'Weapon detection using YOLOv12',
+      description:
+        'A real-time weapon detection system using YOLOv12 for accurately identifying and locating firearms or knives in images to enhance public safety and surveillance.',
+      technologies: ['python', 'YOLOv12'],
+      github: 'https://www.kaggle.com/code/sahilshaik24/weapon-detection-using-yolo-v12',
       demo: '',
     },
   ];
