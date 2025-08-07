@@ -15,7 +15,7 @@ export class ProjectsComponent {
         'A personalized movie recommendation system with authentication, watchlists, and reviews.',
       technologies: ['Angular','HTML', 'CSS' ],
       github: 'https://github.com/sahilsk24/FAV-MOV',
-      demo: 'https://favmov24.netlify.app/',
+      demo: 'https://favmovie24.netlify.app/',
     },
     {
       title: 'Tech Path Way',
