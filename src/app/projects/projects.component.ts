@@ -29,7 +29,7 @@ export class ProjectsComponent {
       title: 'Weapon detection using YOLOv12',
       description:
         'A real-time weapon detection system using YOLOv12 for accurately identifying and locating firearms or knives in images to enhance public safety and surveillance.',
-      technologies: ['python', 'YOLOv12'],
+      technologies: ['python', 'YOLOv12','Angular','Mysql'],
       kaggle: 'https://www.kaggle.com/code/sahilshaik24/weapon-detection-using-yolo-v12',
       github:'https://github.com/sahilsk24/Weapon-Ai',
       demo: 'https://weaponai.netlify.app/',

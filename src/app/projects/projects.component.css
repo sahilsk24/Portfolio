@@ -59,7 +59,7 @@
 }
 
 .project-links a {
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   text-decoration: none;
   color: var(--accent-color);
   border: 1px solid var(--accent-color);

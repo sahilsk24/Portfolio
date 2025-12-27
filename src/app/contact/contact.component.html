@@ -1,11 +1,50 @@
 <section class="contact-section" id="contact">
   <h2>Contact Me</h2>
-  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <!-- <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
     <input type="text" name="name" [(ngModel)]="name" required placeholder="Your Name" />
     <input type="email" name="email" [(ngModel)]="email" required placeholder="Your Email" />
     <textarea name="message" [(ngModel)]="message" required placeholder="Your Message"></textarea>
     <button type="submit">Send Message</button>
-  </form>
+  </form> -->
+
+  <form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify
+  (ngSubmit)="onSubmit(contactForm)"
+  #contactForm="ngForm"
+>
+
+  <!-- REQUIRED hidden field -->
+  <input type="hidden" name="form-name" value="contact" />
+
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="name"
+    required
+    placeholder="Your Name"
+  />
+
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="email"
+    required
+    placeholder="Your Email"
+  />
+
+  <textarea
+    name="message"
+    [(ngModel)]="message"
+    required
+    placeholder="Your Message"
+  ></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
 
   <div class="social-links">
     <a href="https://github.com/sahilsk24" target="_blank" aria-label="GitHub">
